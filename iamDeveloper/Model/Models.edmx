@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iamDeveloperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_AcountCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tittle" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Specialty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="IDUser" Type="bigint" Nullable="false" />
+          <Property Name="IDSpeCategory" Type="int" Nullable="false" />
+          <Property Name="IDAcountCategory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_SpeciflyCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tittle" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="E-Mail" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblSpecialty_tblAcountCategory">
+          <End Role="tbl_AcountCategory" Type="Self.tbl_AcountCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AcountCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDAcountCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSpecialty_tblSpeciflyCategory">
+          <End Role="tbl_SpeciflyCategory" Type="Self.tbl_SpeciflyCategory" Multiplicity="1" />
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_SpeciflyCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDSpeCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSpecialty_tblUser">
+          <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iamDeveloperModelStoreContainer">
+          <EntitySet Name="tbl_AcountCategory" EntityType="Self.tbl_AcountCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Specialty" EntityType="Self.tbl_Specialty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SpeciflyCategory" EntityType="Self.tbl_SpeciflyCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblSpecialty_tblAcountCategory" Association="Self.FK_tblSpecialty_tblAcountCategory">
+            <End Role="tbl_AcountCategory" EntitySet="tbl_AcountCategory" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSpecialty_tblSpeciflyCategory" Association="Self.FK_tblSpecialty_tblSpeciflyCategory">
+            <End Role="tbl_SpeciflyCategory" EntitySet="tbl_SpeciflyCategory" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSpecialty_tblUser" Association="Self.FK_tblSpecialty_tblUser">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iamDeveloperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_AcountCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tittle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_Specialty" Relationship="Self.FK_tblSpecialty_tblAcountCategory" FromRole="tbl_AcountCategory" ToRole="tbl_Specialty" />
+        </EntityType>
+        <EntityType Name="tbl_Specialty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="IDUser" Type="Int64" Nullable="false" />
+          <Property Name="IDSpeCategory" Type="Int32" Nullable="false" />
+          <Property Name="IDAcountCategory" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_AcountCategory" Relationship="Self.FK_tblSpecialty_tblAcountCategory" FromRole="tbl_Specialty" ToRole="tbl_AcountCategory" />
+          <NavigationProperty Name="tbl_SpeciflyCategory" Relationship="Self.FK_tblSpecialty_tblSpeciflyCategory" FromRole="tbl_Specialty" ToRole="tbl_SpeciflyCategory" />
+          <NavigationProperty Name="tbl_Users" Relationship="Self.FK_tblSpecialty_tblUser" FromRole="tbl_Specialty" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="tbl_SpeciflyCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tittle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_Specialty" Relationship="Self.FK_tblSpecialty_tblSpeciflyCategory" FromRole="tbl_SpeciflyCategory" ToRole="tbl_Specialty" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="E_Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_Specialty" Relationship="Self.FK_tblSpecialty_tblUser" FromRole="tbl_Users" ToRole="tbl_Specialty" />
+        </EntityType>
+        <Association Name="FK_tblSpecialty_tblAcountCategory">
+          <End Role="tbl_AcountCategory" Type="Self.tbl_AcountCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AcountCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDAcountCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSpecialty_tblSpeciflyCategory">
+          <End Role="tbl_SpeciflyCategory" Type="Self.tbl_SpeciflyCategory" Multiplicity="1" />
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_SpeciflyCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDSpeCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSpecialty_tblUser">
+          <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Specialty" Type="Self.tbl_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Specialty">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iamDeveloperEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_AcountCategory" EntityType="Self.tbl_AcountCategory" />
+          <EntitySet Name="tbl_Specialty" EntityType="Self.tbl_Specialty" />
+          <EntitySet Name="tbl_SpeciflyCategory" EntityType="Self.tbl_SpeciflyCategory" />
+          <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" />
+          <AssociationSet Name="FK_tblSpecialty_tblAcountCategory" Association="Self.FK_tblSpecialty_tblAcountCategory">
+            <End Role="tbl_AcountCategory" EntitySet="tbl_AcountCategory" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSpecialty_tblSpeciflyCategory" Association="Self.FK_tblSpecialty_tblSpeciflyCategory">
+            <End Role="tbl_SpeciflyCategory" EntitySet="tbl_SpeciflyCategory" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSpecialty_tblUser" Association="Self.FK_tblSpecialty_tblUser">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iamDeveloperModelStoreContainer" CdmEntityContainer="iamDeveloperEntities1">
+          <EntitySetMapping Name="tbl_AcountCategory">
+            <EntityTypeMapping TypeName="iamDeveloperModel.tbl_AcountCategory">
+              <MappingFragment StoreEntitySet="tbl_AcountCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Specialty">
+            <EntityTypeMapping TypeName="iamDeveloperModel.tbl_Specialty">
+              <MappingFragment StoreEntitySet="tbl_Specialty">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="IDSpeCategory" ColumnName="IDSpeCategory" />
+                <ScalarProperty Name="IDAcountCategory" ColumnName="IDAcountCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SpeciflyCategory">
+            <EntityTypeMapping TypeName="iamDeveloperModel.tbl_SpeciflyCategory">
+              <MappingFragment StoreEntitySet="tbl_SpeciflyCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Users">
+            <EntityTypeMapping TypeName="iamDeveloperModel.tbl_Users">
+              <MappingFragment StoreEntitySet="tbl_Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="E_Mail" ColumnName="E-Mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
