@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelsContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_AcountCategory" EntityType="Models.AcountCategory" />
+    <EntitySet Name="tbl_Specialty" EntityType="Models.Specialty" />
+    <EntitySet Name="tbl_SpeciflyCategory" EntityType="Models.SpeciflyCategory" />
+    <EntitySet Name="tbl_Users" EntityType="Models.Users" />
+    <AssociationSet Name="FK_tblSpecialty_tblAcountCategory" Association="Models.FK_tblSpecialty_tblAcountCategory">
+      <End Role="tbl_AcountCategory" EntitySet="tbl_AcountCategory" />
+      <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSpecialty_tblSpeciflyCategory" Association="Models.FK_tblSpecialty_tblSpeciflyCategory">
+      <End Role="tbl_SpeciflyCategory" EntitySet="tbl_SpeciflyCategory" />
+      <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSpecialty_tblUser" Association="Models.FK_tblSpecialty_tblUser">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_Specialty" EntitySet="tbl_Specialty" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AcountCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tittle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Specialty" Relationship="Models.FK_tblSpecialty_tblAcountCategory" FromRole="tbl_AcountCategory" ToRole="tbl_Specialty" />
+  </EntityType>
+  <EntityType Name="Specialty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="IDUser" Type="Int64" Nullable="false" />
+    <Property Name="IDSpeCategory" Type="Int32" Nullable="false" />
+    <Property Name="IDAcountCategory" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_AcountCategory" Relationship="Models.FK_tblSpecialty_tblAcountCategory" FromRole="tbl_Specialty" ToRole="tbl_AcountCategory" />
+    <NavigationProperty Name="tbl_SpeciflyCategory" Relationship="Models.FK_tblSpecialty_tblSpeciflyCategory" FromRole="tbl_Specialty" ToRole="tbl_SpeciflyCategory" />
+    <NavigationProperty Name="tbl_Users" Relationship="Models.FK_tblSpecialty_tblUser" FromRole="tbl_Specialty" ToRole="tbl_Users" />
+  </EntityType>
+  <EntityType Name="SpeciflyCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tittle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Specialty" Relationship="Models.FK_tblSpecialty_tblSpeciflyCategory" FromRole="tbl_SpeciflyCategory" ToRole="tbl_Specialty" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="E_Mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Specialty" Relationship="Models.FK_tblSpecialty_tblUser" FromRole="tbl_Users" ToRole="tbl_Specialty" />
+  </EntityType>
+  <Association Name="FK_tblSpecialty_tblAcountCategory">
+    <End Type="Models.AcountCategory" Role="tbl_AcountCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Models.Specialty" Role="tbl_Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_AcountCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Specialty">
+        <PropertyRef Name="IDAcountCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSpecialty_tblSpeciflyCategory">
+    <End Type="Models.SpeciflyCategory" Role="tbl_SpeciflyCategory" Multiplicity="1" />
+    <End Type="Models.Specialty" Role="tbl_Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SpeciflyCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Specialty">
+        <PropertyRef Name="IDSpeCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSpecialty_tblUser">
+    <End Type="Models.Users" Role="tbl_Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Models.Specialty" Role="tbl_Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Specialty">
+        <PropertyRef Name="IDUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

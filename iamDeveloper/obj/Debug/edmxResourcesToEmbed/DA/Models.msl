@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Models" />
+  <Alias Key="Target" Value="Models.Store" />
+  <EntityContainerMapping CdmEntityContainer="ModelsContainer" StorageEntityContainer="ModelsStoreContainer">
+    <EntitySetMapping Name="tbl_AcountCategory">
+      <EntityTypeMapping TypeName="Models.AcountCategory">
+        <MappingFragment StoreEntitySet="tbl_AcountCategory">
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Specialty">
+      <EntityTypeMapping TypeName="Models.Specialty">
+        <MappingFragment StoreEntitySet="tbl_Specialty">
+          <ScalarProperty Name="IDAcountCategory" ColumnName="IDAcountCategory" />
+          <ScalarProperty Name="IDSpeCategory" ColumnName="IDSpeCategory" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SpeciflyCategory">
+      <EntityTypeMapping TypeName="Models.SpeciflyCategory">
+        <MappingFragment StoreEntitySet="tbl_SpeciflyCategory">
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="Models.Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="E_Mail" ColumnName="E-Mail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
