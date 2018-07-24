@@ -11,8 +11,8 @@
    `languageId=[integer]`
     *language id*<br/>
 *   **Required:**<br/>
-    `id=[integer]'<br/>
-    'languageId=[integer]'
+    id=[integer]<br/>
+    languageId=[integer]
 * **Data Params**
     `NONE`
 * **Success Response:**
