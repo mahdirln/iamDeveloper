@@ -6,11 +6,13 @@
 * **Method:**
     `GET`
 *  **URL Params**
-   `numberOfFeeds=[integer]`
-    *specify the number of top feeds to return*<br/>
-    `3` means it should only return three highest valuable feeds from each category
+   `id=[integer]`
+    *address id*<br/>
+   `languageId=[integer]`
+    *language id*<br/>
 *   **Required:**
-    `numberOfFeeds=[integer]`
+    `id=[integer]
+    languageId=[integer]'
 * **Data Params**
     `NONE`
 * **Success Response:**
