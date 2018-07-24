@@ -6,7 +6,7 @@
 * **Method:**
     `GET`
 *  **URL Params**
-   `id=[integer]`
+   `id=[integer]`<br/>
     *address id*<br/>
    `languageId=[integer]`
     *language id*<br/>
