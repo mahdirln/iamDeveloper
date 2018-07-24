@@ -1,10 +1,7 @@
-**Over View  feeds**
+**Address**
 ----
-  Returns the most profitable feeds in each category
-  A categorized list of the most interesting items.(overall Info's).
-
 * **URL**
-  /feeds/overview
+  /address/GetById
 
 * **Method:**
     `GET`
