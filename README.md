@@ -82,6 +82,7 @@
     "model": null
   }
   `
+  ----
 * **URL**
   /address/GetByCurrentCustomer
 
@@ -149,7 +150,6 @@
     "model": null
   }
   `
-  **Address**
 ----
 * **URL**
   /address/GetById
