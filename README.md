@@ -23,6 +23,7 @@
     "status": 200,
     "message": "Ok, successfull",
     "model": {
+        "id": 1,
         "first_name": "John",
         "last_name": "Smith",
         "email": "mahdi.r.ln@gmail.com",
@@ -55,7 +56,6 @@
         "fax_number": "",
         "formatted_custom_address_attributes": "",
         "custom_address_attributes": [],
-        "Id": 1,
         "CustomProperties": {}
     }
 }
