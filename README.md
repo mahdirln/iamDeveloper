@@ -364,6 +364,108 @@
     ]
 }
 ```
- 
+
+**Category**
+----
+* **URL**
+  /category/getById
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+   `id=[integer]`
+    *id*<br/>
+   `languageId=[integer]`
+    *language id*<br/>
+   `storeId=[integer]`
+    *store id*<br/>
+*   **Required:**<br/>
+    id=[integer]
+    storeId=[integer]<br/>
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": {
+        "id": 1,
+        "name": "Computers",
+        "descriprion": null,
+        "meta_keywords": null,
+        "meta_description": null,
+        "meta_title": null,
+        "se_name": "computers",
+        "parent_category_id": 0,
+        "picture_id": 1,
+        "picture": {
+            "id": 1,
+            "image_base64": null,
+            "image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers_450.jpeg",
+            "thumb_image_url": null,
+            "seo_filename": null,
+            "mime_type": null,
+            "full_size_image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers.jpeg",
+            "title": "نمایش محصولات در دسته  Computers",
+            "alternate_text": "تصویر برای دسته  Computers"
+        }
+    }
+}
+```
+----
+* **URL**
+  /category/GetCategoryByParentId
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+   `parentCategoryId=[integer]`
+    *parent category id*<br/>
+   `storeId=[integer]`
+    *store id*<br/>
+   `languageId=[integer]`
+    *language id*<br/>
+*   **Required:**<br/>
+    parentCategoryId=[integer]
+    storeId=[integer]
+    languageId=[integer]<br/>
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": {
+        "id": 1,
+        "name": "Computers",
+        "descriprion": null,
+        "meta_keywords": null,
+        "meta_description": null,
+        "meta_title": null,
+        "se_name": "computers",
+        "parent_category_id": 0,
+        "picture_id": 1,
+        "picture": {
+            "id": 1,
+            "image_base64": null,
+            "image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers_450.jpeg",
+            "thumb_image_url": null,
+            "seo_filename": null,
+            "mime_type": null,
+            "full_size_image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers.jpeg",
+            "title": "نمایش محصولات در دسته  Computers",
+            "alternate_text": "تصویر برای دسته  Computers"
+        }
+    }
+}
+```
 
 
