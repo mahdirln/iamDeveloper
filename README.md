@@ -64,13 +64,13 @@
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `
-    ```{
-          "status": 400,
-          "message": "Bad request, address id should not be zero",
-          "model": null
-    ```}
-    `
+  **Content:** `
+  ```{
+        "status": 400,
+        "message": "Bad request, address id should not be zero",
+        "model": null
+  ```}
+  `
 
   OR
   
