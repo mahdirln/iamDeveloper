@@ -64,21 +64,21 @@
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-  **Content:** `
+  **Content:** 
   ```{
         "status": 400,
         "message": "Bad request, address id should not be zero",
         "model": null
   ```}
-  `
+
 
   OR
   
   * **Code:** 404 NOT FOUND <br />
-  **Content:** `
+  **Content:** 
   ```{
         "status": 404,
         "message": "Not found, address is not found",
         "model": null
   ```}
-  `
+  
