@@ -63,13 +63,22 @@
  
 * **Error Response:**
 
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `
+    ```{
+          "status": 400,
+          "message": "Bad request, address id should not be zero",
+          "model": null
+    ```}
+    `
+
+  OR
+  
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "YOUR DESIRED MESSAGE(preferred persian)" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "YOUR DESIRED MESSAGE(preferred persian)" }`
-
-  OR
-    *    **...**
+  **Content:** `
+  ```{
+        "status": 404,
+        "message": "Not found, address is not found",
+        "model": null
+  ```}
+  `
