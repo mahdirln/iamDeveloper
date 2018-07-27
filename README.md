@@ -82,21 +82,15 @@
     "model": null
   }
   `
-  **Address**
-----
 * **URL**
-  /address/GetById
+  /address/GetByCurrentCustomer
 
 * **Method:**
     `GET`
-*  **URL Params**<br/>
-   `id=[integer]`
-    *address id*<br/>
-   `languageId=[integer]`
-    *language id*<br/>
-*   **Required:**<br/>
-    id=[integer]<br/>
-    languageId=[integer]
+*  **URL Params** 
+    `NONE`
+*   **Required:** 
+    `NONE`
 * **Data Params**
     `NONE`
 * **Success Response:**
@@ -147,22 +141,11 @@
  
 * **Error Response:**
 
-  * **Code:** 400 BAD REQUEST <br />
-  **Content:** `
-  {
-    "status": 400,
-    "message": "Bad request, address id should not be zero",
-    "model": null
-  }
-  `
-
-  OR
-  
   * **Code:** 404 NOT FOUND <br />
   **Content:** `
   {
     "status": 404,
-    "message": "Not found, address is not found",
+    "message": "Not found, customer is not found",
     "model": null
   }
   `
