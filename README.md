@@ -835,3 +835,608 @@
     "model": null
   }
   `
+**PRODUCT**
+----
+* **URL**
+  /product/getById
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+   `id=[integer]`
+    *id*<br/>
+   `storeId=[integer]`
+    *store id*<br/>
+*   **Required:**<br/>
+    Id=[integer]<br/>
+    storeId=[integer]<br/>
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": {
+        "default_picture_zoom_enabled": false,
+        "default_picture_model": {
+            "id": 0,
+            "image_base64": null,
+            "image_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer_550.jpeg",
+            "thumb_image_url": null,
+            "seo_filename": null,
+            "mime_type": null,
+            "full_size_image_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer.jpeg",
+            "title": "تصویر  Build your own computer",
+            "alternate_text": "تصویر  Build your own computer"
+        },
+        "pictures_model": [
+            {
+                "id": 0,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer_550.jpeg",
+                "thumb_image_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer_100.jpeg",
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer.jpeg",
+                "title": "تصویر  Build your own computer",
+                "alternate_text": "تصویر  Build your own computer"
+            },
+            {
+                "id": 0,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000021_build-your-own-computer_550.jpeg",
+                "thumb_image_url": "http://localhost/content/images/thumbs/0000021_build-your-own-computer_100.jpeg",
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000021_build-your-own-computer.jpeg",
+                "title": "تصویر  Build your own computer",
+                "alternate_text": "تصویر  Build your own computer"
+            }
+        ],
+        "name": "Build your own computer",
+        "short_description": "Build it",
+        "full_description": "<p>Fight back against cluttered workspaces with the stylish IBM zBC12 All-in-One desktop PC, featuring powerful computing resources and a stunning 20.1-inch widescreen display with stunning XBRITE-HiColor LCD technology. The black IBM zBC12 has a built-in microphone and MOTION EYE camera with face-tracking technology that allows for easy communication with friends and family. And it has a built-in DVD burner and Sony's Movie Store software so you can create a digital entertainment library for personal viewing at your convenience. Easy to setup and even easier to use, this JS-series All-in-One includes an elegantly designed keyboard and a USB mouse.</p>",
+        "meta_keywords": null,
+        "meta_description": "Build it",
+        "meta_title": null,
+        "se_name": "build-your-own-computer",
+        "product_type": 5,
+        "show_sku": true,
+        "sku": "COMP_CUST",
+        "show_manufacturer_part_number": false,
+        "manufacturer_part_number": null,
+        "show_gtin": false,
+        "gtin": null,
+        "show_vendor": false,
+        "vendor_model": {
+            "Name": null,
+            "SeName": null,
+            "Id": 0,
+            "CustomProperties": {}
+        },
+        "has_sample_download": false,
+        "gift_cart": {
+            "is_gift_card": false,
+            "recipient_name": null,
+            "recipient_email": null,
+            "sender_name": null,
+            "sender_email": null,
+            "message": null,
+            "gift_cart_type": 0,
+            "CustomProperties": {}
+        },
+        "is_ship_enable": true,
+        "is_free_shipping": true,
+        "free_shipping_notification_enabled": true,
+        "delivery_date": null,
+        "is_rental": false,
+        "rental_start_date": null,
+        "rental_end_date": null,
+        "manage_inventory_method": 1,
+        "stock_availability": "در انبار",
+        "display_back_in_stock_subscription": false,
+        "email_a_friend_enabled": true,
+        "compare_products_enabled": true,
+        "product_price": {
+            "currency_code": "RLS",
+            "old_price": null,
+            "price": "ريال44,916/00",
+            "price_with_discount": null,
+            "price_value": 44916,
+            "customer_enters_price": false,
+            "call_for_price": false,
+            "product_id": 1,
+            "hide_prices": false,
+            "is_rental": false,
+            "rental_price": null,
+            "display_tax_shipping_info": false,
+            "base_price_pangv": null,
+            "CustomProperties": {}
+        },
+        "add_to_cart": {
+            "product_id": 1,
+            "entered_quantity": 1,
+            "minimum_quantity_notification": null,
+            "allowed_quantities": [],
+            "customer_enters_price": false,
+            "customer_Entered_price": 0,
+            "customer_entered_price_range": null,
+            "disable_buy_button": false,
+            "disable_wishlist_button": false,
+            "is_rental": false,
+            "available_for_pre_order": false,
+            "pre_order_availability_start_date_time_utc": null,
+            "updated_shopping_cart_item_id": 0,
+            "update_shopping_cart_item_type": null,
+            "CustomProperties": {}
+        },
+        "bread_crump": {
+            "enable": true,
+            "product_id": 1,
+            "product_name": "Build your own computer",
+            "product_se_name": "build-your-own-computer",
+            "category_breadcrumb": [
+                {
+                    "Name": "Computers",
+                    "SeName": "computers",
+                    "NumberOfProducts": null,
+                    "IncludeInTopMenu": true,
+                    "SubCategories": [],
+                    "Id": 1,
+                    "CustomProperties": {}
+                },
+                {
+                    "Name": "Desktops",
+                    "SeName": "desktops",
+                    "NumberOfProducts": null,
+                    "IncludeInTopMenu": true,
+                    "SubCategories": [],
+                    "Id": 2,
+                    "CustomProperties": {}
+                }
+            ],
+            "CustomProperties": {}
+        },
+        "product_tags": [
+            {
+                "id": 6,
+                "name": "computer",
+                "se_name": "computer",
+                "product_count": 14
+            },
+            {
+                "id": 8,
+                "name": "awesome",
+                "se_name": "awesome",
+                "product_count": 17
+            }
+        ],
+        "product_attributes": [
+            {
+                "product_id": 1,
+                "product_attribute_id": 6,
+                "name": "Processor",
+                "description": null,
+                "text_prompt": null,
+                "is_required": true,
+                "default_value": null,
+                "selected_day": null,
+                "selected_month": null,
+                "selected_year": null,
+                "has_condition": false,
+                "allowed_file_extensions": [],
+                "attribute_control_type": 1,
+                "values": [
+                    {
+                        "name": "2.2 GHz Intel Pentium Dual-Core E2200",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": null,
+                        "price_adjustment_value": 0,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 1,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "2.5 GHz Intel Pentium Dual-Core E2200",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال561/45",
+                        "price_adjustment_value": 561.45,
+                        "is_pre_selected": true,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 2,
+                        "CustomProperties": {}
+                    }
+                ],
+                "Id": 1,
+                "CustomProperties": {}
+            },
+            {
+                "product_id": 1,
+                "product_attribute_id": 7,
+                "name": "RAM",
+                "description": null,
+                "text_prompt": null,
+                "is_required": true,
+                "default_value": null,
+                "selected_day": null,
+                "selected_month": null,
+                "selected_year": null,
+                "has_condition": false,
+                "allowed_file_extensions": [],
+                "attribute_control_type": 1,
+                "values": [
+                    {
+                        "name": "2 GB",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": null,
+                        "price_adjustment_value": 0,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 3,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "4GB",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال748/60",
+                        "price_adjustment_value": 748.6,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 4,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "8GB",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال2,245/80",
+                        "price_adjustment_value": 2245.8,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 5,
+                        "CustomProperties": {}
+                    }
+                ],
+                "Id": 2,
+                "CustomProperties": {}
+            },
+            {
+                "product_id": 1,
+                "product_attribute_id": 4,
+                "name": "HDD",
+                "description": null,
+                "text_prompt": null,
+                "is_required": true,
+                "default_value": null,
+                "selected_day": null,
+                "selected_month": null,
+                "selected_year": null,
+                "has_condition": false,
+                "allowed_file_extensions": [],
+                "attribute_control_type": 2,
+                "values": [
+                    {
+                        "name": "320 GB",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": null,
+                        "price_adjustment_value": 0,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 6,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "400 GB",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال3,743/00",
+                        "price_adjustment_value": 3743,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 7,
+                        "CustomProperties": {}
+                    }
+                ],
+                "Id": 3,
+                "CustomProperties": {}
+            },
+            {
+                "product_id": 1,
+                "product_attribute_id": 5,
+                "name": "OS",
+                "description": null,
+                "text_prompt": null,
+                "is_required": true,
+                "default_value": null,
+                "selected_day": null,
+                "selected_month": null,
+                "selected_year": null,
+                "has_condition": false,
+                "allowed_file_extensions": [],
+                "attribute_control_type": 2,
+                "values": [
+                    {
+                        "name": "Vista Home",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال1,871/50",
+                        "price_adjustment_value": 1871.5,
+                        "is_pre_selected": true,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 8,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "Vista Premium",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال2,245/80",
+                        "price_adjustment_value": 2245.8,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 9,
+                        "CustomProperties": {}
+                    }
+                ],
+                "Id": 4,
+                "CustomProperties": {}
+            },
+            {
+                "product_id": 1,
+                "product_attribute_id": 9,
+                "name": "Software",
+                "description": null,
+                "text_prompt": null,
+                "is_required": false,
+                "default_value": null,
+                "selected_day": null,
+                "selected_month": null,
+                "selected_year": null,
+                "has_condition": false,
+                "allowed_file_extensions": [],
+                "attribute_control_type": 3,
+                "values": [
+                    {
+                        "name": "Microsoft Office",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال1,871/50",
+                        "price_adjustment_value": 1871.5,
+                        "is_pre_selected": true,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 10,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "Acrobat Reader",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال374/30",
+                        "price_adjustment_value": 374.3,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 11,
+                        "CustomProperties": {}
+                    },
+                    {
+                        "name": "Total Commander",
+                        "color_squares_rgb": null,
+                        "image_squares_picture_model": {
+                            "id": 0,
+                            "image_base64": null,
+                            "image_url": null,
+                            "thumb_image_url": null,
+                            "seo_filename": null,
+                            "mime_type": null,
+                            "full_size_image_url": null,
+                            "title": null,
+                            "alternate_text": null
+                        },
+                        "price_adjustment": "+ريال187/15",
+                        "price_adjustment_value": 187.15,
+                        "is_pre_selected": false,
+                        "picture_id": 0,
+                        "customer_enters_qty": false,
+                        "quantity": 0,
+                        "Id": 12,
+                        "CustomProperties": {}
+                    }
+                ],
+                "Id": 5,
+                "CustomProperties": {}
+            }
+        ],
+        "product_specifications": [],
+        "product_manufacturers": [],
+        "product_review_overview": {
+            "ProductId": 1,
+            "RatingSum": 0,
+            "TotalReviews": 0,
+            "AllowCustomerReviews": true,
+            "CustomProperties": {}
+        },
+        "tier_prices": [],
+        "associated_products": [],
+        "display_discontinued_message": false,
+        "current_store_name": "Your store name",
+        "Id": 1,
+        "CustomProperties": {}
+    }
+}
+```
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad request, product id should not be zero",
+    "model": null
+  }
+  `
+  
+  OR 
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, product is not found",
+    "model": null
+  }
+  `
+  
