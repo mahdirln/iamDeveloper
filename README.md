@@ -513,5 +513,117 @@
     ]
 }
 ```
+* **Error Response:**
 
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+----
+* **URL**
+  /category/GetDisplayOnHomePageCategories
 
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+   `storeId=[integer]`
+    *store id*<br/>
+   `languageId=[integer]`
+    *language id*<br/>
+*   **Required:**<br/>
+    storeId=[integer]
+    languageId=[integer]<br/>
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": [
+        {
+            "id": 5,
+            "name": "Electronics",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "electronics",
+            "parent_category_id": 0,
+            "picture_id": 0,
+            "picture": {
+                "id": 0,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000005_electronics_450.jpeg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000005_electronics.jpeg",
+                "title": "نمایش محصولات در دسته  Electronics",
+                "alternate_text": "تصویر برای دسته  Electronics"
+            }
+        },
+        {
+            "id": 9,
+            "name": "Apparel",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "apparel",
+            "parent_category_id": 0,
+            "picture_id": 0,
+            "picture": {
+                "id": 0,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000009_apparel_450.jpeg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000009_apparel.jpeg",
+                "title": "نمایش محصولات در دسته  Apparel",
+                "alternate_text": "تصویر برای دسته  Apparel"
+            }
+        },
+        {
+            "id": 13,
+            "name": "Digital downloads",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "digital-downloads",
+            "parent_category_id": 0,
+            "picture_id": 0,
+            "picture": {
+                "id": 0,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000013_digital-downloads_450.jpeg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000013_digital-downloads.jpeg",
+                "title": "نمایش محصولات در دسته  Digital downloads",
+                "alternate_text": "تصویر برای دسته  Digital downloads"
+            }
+        }
+    ]
+}
+```
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
