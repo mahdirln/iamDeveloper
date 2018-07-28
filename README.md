@@ -443,28 +443,74 @@
 {
     "status": 200,
     "message": "Ok, successfull",
-    "model": {
-        "id": 1,
-        "name": "Computers",
-        "descriprion": null,
-        "meta_keywords": null,
-        "meta_description": null,
-        "meta_title": null,
-        "se_name": "computers",
-        "parent_category_id": 0,
-        "picture_id": 1,
-        "picture": {
-            "id": 1,
-            "image_base64": null,
-            "image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers_450.jpeg",
-            "thumb_image_url": null,
-            "seo_filename": null,
-            "mime_type": null,
-            "full_size_image_url": "http://nop-extensions.ir/content/images/thumbs/0000001_computers.jpeg",
-            "title": "نمایش محصولات در دسته  Computers",
-            "alternate_text": "تصویر برای دسته  Computers"
+    "model": [
+        {
+            "id": 2,
+            "name": "Desktops",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "desktops",
+            "parent_category_id": 1,
+            "picture_id": 2,
+            "picture": {
+                "id": 2,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000002_desktops_450.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000002_desktops.jpg",
+                "title": "نمایش محصولات در دسته  Desktops",
+                "alternate_text": "تصویر برای دسته  Desktops"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Notebooks",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "notebooks",
+            "parent_category_id": 1,
+            "picture_id": 3,
+            "picture": {
+                "id": 3,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000003_notebooks_450.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000003_notebooks.jpg",
+                "title": "نمایش محصولات در دسته  Notebooks",
+                "alternate_text": "تصویر برای دسته  Notebooks"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Software",
+            "descriprion": null,
+            "meta_keywords": null,
+            "meta_description": null,
+            "meta_title": null,
+            "se_name": "software",
+            "parent_category_id": 1,
+            "picture_id": 4,
+            "picture": {
+                "id": 4,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000004_software_450.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000004_software.jpg",
+                "title": "نمایش محصولات در دسته  Software",
+                "alternate_text": "تصویر برای دسته  Software"
+            }
         }
-    }
+    ]
 }
 ```
 
