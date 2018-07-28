@@ -1,7 +1,7 @@
 **Address**
 ----
 * **URL**
-  /address/GetById
+  /address/getById
 
 * **Method:**
     `GET`
@@ -728,6 +728,109 @@
   **Content:** `
   {
     "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+**MANUFACTURER**
+----
+* **URL**
+  /manufacturer/manufacturers
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+   `storeId=[integer]`
+    *store id*<br/>
+   `languageId=[integer]`
+    *language id*<br/>
+   `count=[integer]`
+    *count*<br/>
+*   **Required:**<br/>
+    storeId=[integer]<br/>
+    languageId=[integer]
+    count=[integer]
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": [
+        {
+            "Id": 1,
+            "name": "Apple",
+            "description": null,
+            "picture_id": 17,
+            "picture_model": {
+                "id": 17,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000017_apple_420.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000017_apple.jpg",
+                "title": "Apple",
+                "alternate_text": "Apple"
+            },
+            "published": true,
+            "deleted": false,
+            "display_order": 1
+        },
+        {
+            "Id": 2,
+            "name": "HP",
+            "description": null,
+            "picture_id": 18,
+            "picture_model": {
+                "id": 18,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000018_hp_420.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000018_hp.jpg",
+                "title": "HP",
+                "alternate_text": "HP"
+            },
+            "published": true,
+            "deleted": false,
+            "display_order": 5
+        },
+        {
+            "Id": 3,
+            "name": "Nike",
+            "description": null,
+            "picture_id": 19,
+            "picture_model": {
+                "id": 19,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000019_nike_420.jpg",
+                "thumb_image_url": null,
+                "seo_filename": null,
+                "mime_type": null,
+                "full_size_image_url": "http://localhost/content/images/thumbs/0000019_nike.jpg",
+                "title": "Nike",
+                "alternate_text": "Nike"
+            },
+            "published": true,
+            "deleted": false,
+            "display_order": 5
+        }
+    ]
+}
+```
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 400,
     "message": "Not found, customer is not found",
     "model": null
   }
