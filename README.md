@@ -3332,3 +3332,76 @@
     "model": null
   }
   `
+----
+  
+* **URL**
+/product/lastProducts
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    count=[integer]
+    count<br/>
+    storeId=[integer]
+    store id<br/>
+*   **Required:**<br/>
+    count=[integer]
+    count<br/>
+    storeId=[integer]
+    store id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+product response data
+```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, product picture is not found",
+    "model": null
+  }
+  `
+  ----
+  
+* **URL**
+/product/bestSellingProducts
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    storeId=[integer]
+    store id<br/>
+*   **Required:**<br/>
+    storeId=[integer]
+    store id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+product response data
+```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, product picture is not found",
+    "model": null
+  }
+  `
+
