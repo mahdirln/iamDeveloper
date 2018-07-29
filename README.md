@@ -3227,37 +3227,108 @@
 
 * **Success Response:**
 
-  * **Code:** 200 <br/>
-    **Content:** 
-  ```
-  {
+* **Code:** 200 <br/>
+  **Content:** 
+```
+{
+  "status": 200,
+  "message": "Ok, successfull",
+  "model": [
+      {
+          "id": 1,
+          "picture_id": 20,
+          "product_id": 1,
+          "picture_base64": null,
+          "picture_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer.jpeg",
+          "seo_filename": "build-your-own-computer",
+          "title_attribute": null,
+          "alt_attribute": null,
+          "mime_type": "image/jpeg",
+          "display_order": 0
+      },
+      {
+          "id": 2,
+          "picture_id": 21,
+          "product_id": 1,
+          "picture_base64": null,
+          "picture_url": "http://localhost/content/images/thumbs/0000021_build-your-own-computer.jpeg",
+          "seo_filename": "build-your-own-computer",
+          "title_attribute": null,
+          "alt_attribute": null,
+          "mime_type": "image/jpeg",
+          "display_order": 0
+      }
+  ]
+}
+```
+
+* **Error Response:**
+
+* **Code:** 404 NOT FOUND <br />
+**Content:** `
+{
+  "status": 404,
+  "message": "Bad request, product id should not be zero",
+  "model": null
+}
+ `
+----
+  
+* **URL**
+/product/getProductPictureUrlById
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    productPictureId=[integer]
+    product picture id<br/>
+*   **Required:**<br/>
+    productPictureId=[integer]
+    product picture id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+{
     "status": 200,
     "message": "Ok, successfull",
-    "model": [
-        {
-            "id": 1,
-            "picture_id": 20,
-            "product_id": 1,
-            "picture_base64": null,
-            "picture_url": "http://localhost/content/images/thumbs/0000020_build-your-own-computer.jpeg",
-            "seo_filename": "build-your-own-computer",
-            "title_attribute": null,
-            "alt_attribute": null,
-            "mime_type": "image/jpeg",
-            "display_order": 0
-        },
-        {
-            "id": 2,
-            "picture_id": 21,
-            "product_id": 1,
-            "picture_base64": null,
-            "picture_url": "http://localhost/content/images/thumbs/0000021_build-your-own-computer.jpeg",
-            "seo_filename": "build-your-own-computer",
-            "title_attribute": null,
-            "alt_attribute": null,
-            "mime_type": "image/jpeg",
-            "display_order": 0
-        }
-    ]
+    "model": {
+        "id": 20,
+        "picture_id": 39,
+        "product_id": 16,
+        "picture_base64": null,
+        "picture_url": "http://localhost/content/images/thumbs/0000039_leica-t-mirrorless-digital-camera.jpeg",
+        "seo_filename": "leica-t-mirrorless-digital-camera",
+        "title_attribute": null,
+        "alt_attribute": null,
+        "mime_type": "image/jpeg",
+        "display_order": 0
+    }
 }
-  ```
+```
+
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad request, product picture id should not be zero",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, product picture is not found",
+    "model": null
+  }
+  `
