@@ -3408,7 +3408,7 @@ product response data
 ----
   
 * **URL**
-/shopingCart/GetShoppingCartByCurrentCustomer
+/shoppingCart/getShoppingCartByCurrentCustomer
 
 * **Method:**
     `GET`
@@ -3623,3 +3623,384 @@ product response data
     "model": null
   }
   `
+* **URL**
+/shoppingCart/getShoppingCartByCurrentCustomerStoreId
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+*   **Required:**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": {
+        "OnePageCheckoutEnabled": true,
+        "ShowSku": false,
+        "ShowProductImages": false,
+        "IsEditable": false,
+        "Items": [],
+        "CheckoutAttributeInfo": null,
+        "CheckoutAttributes": [],
+        "Warnings": [],
+        "MinOrderSubtotalWarning": null,
+        "DisplayTaxShippingInfo": false,
+        "TermsOfServiceOnShoppingCartPage": false,
+        "TermsOfServiceOnOrderConfirmPage": false,
+        "EstimateShipping": {
+            "Enabled": false,
+            "CountryId": null,
+            "StateProvinceId": null,
+            "ZipPostalCode": null,
+            "AvailableCountries": [],
+            "AvailableStates": [],
+            "CustomProperties": {}
+        },
+        "DiscountBox": {
+            "AppliedDiscountsWithCodes": [],
+            "Display": false,
+            "Messages": [],
+            "IsApplied": false,
+            "CustomProperties": {}
+        },
+        "GiftCardBox": {
+            "Display": false,
+            "Message": null,
+            "IsApplied": false,
+            "CustomProperties": {}
+        },
+        "OrderReviewData": {
+            "Display": false,
+            "BillingAddress": {
+                "id": 0,
+                "first_name": null,
+                "last_name": null,
+                "email": null,
+                "company_enabled": false,
+                "company_required": false,
+                "company": null,
+                "country_enabled": false,
+                "country_id": null,
+                "country_name": null,
+                "state_province_enabled": false,
+                "state_province_id": null,
+                "state_province_name": null,
+                "city_enabled": false,
+                "city_required": false,
+                "city": null,
+                "street_address_enabled": false,
+                "street_address_required": false,
+                "address1": null,
+                "street_address2_enabled": false,
+                "street_address2_required": false,
+                "address2": null,
+                "zip_postal_code_enabled": false,
+                "zip_postal_code_required": false,
+                "zip_postal_code": null,
+                "phone_enabled": false,
+                "phone_required": false,
+                "phone_number": null,
+                "fax_enabled": false,
+                "fax_required": false,
+                "fax_number": null,
+                "formatted_custom_address_attributes": null,
+                "custom_address_attributes": []
+            },
+            "IsShippable": false,
+            "ShippingAddress": {
+                "id": 0,
+                "first_name": null,
+                "last_name": null,
+                "email": null,
+                "company_enabled": false,
+                "company_required": false,
+                "company": null,
+                "country_enabled": false,
+                "country_id": null,
+                "country_name": null,
+                "state_province_enabled": false,
+                "state_province_id": null,
+                "state_province_name": null,
+                "city_enabled": false,
+                "city_required": false,
+                "city": null,
+                "street_address_enabled": false,
+                "street_address_required": false,
+                "address1": null,
+                "street_address2_enabled": false,
+                "street_address2_required": false,
+                "address2": null,
+                "zip_postal_code_enabled": false,
+                "zip_postal_code_required": false,
+                "zip_postal_code": null,
+                "phone_enabled": false,
+                "phone_required": false,
+                "phone_number": null,
+                "fax_enabled": false,
+                "fax_required": false,
+                "fax_number": null,
+                "formatted_custom_address_attributes": null,
+                "custom_address_attributes": []
+            },
+            "SelectedPickUpInStore": false,
+            "PickupAddress": {
+                "id": 0,
+                "first_name": null,
+                "last_name": null,
+                "email": null,
+                "company_enabled": false,
+                "company_required": false,
+                "company": null,
+                "country_enabled": false,
+                "country_id": null,
+                "country_name": null,
+                "state_province_enabled": false,
+                "state_province_id": null,
+                "state_province_name": null,
+                "city_enabled": false,
+                "city_required": false,
+                "city": null,
+                "street_address_enabled": false,
+                "street_address_required": false,
+                "address1": null,
+                "street_address2_enabled": false,
+                "street_address2_required": false,
+                "address2": null,
+                "zip_postal_code_enabled": false,
+                "zip_postal_code_required": false,
+                "zip_postal_code": null,
+                "phone_enabled": false,
+                "phone_required": false,
+                "phone_number": null,
+                "fax_enabled": false,
+                "fax_required": false,
+                "fax_number": null,
+                "formatted_custom_address_attributes": null,
+                "custom_address_attributes": []
+            },
+            "ShippingMethod": null,
+            "PaymentMethod": null,
+            "CustomValues": {},
+            "CustomProperties": {}
+        },
+        "ButtonPaymentMethodActionNames": [],
+        "ButtonPaymentMethodControllerNames": [],
+        "ButtonPaymentMethodRouteValues": [],
+        "HideCheckoutButton": false,
+        "CustomProperties": {}
+    }
+}
+```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad request, working language is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad reuqest, current currency is not found",
+    "model": null
+  }
+  `
+    ----
+  
+* **URL**
+/shoppingCart/addToCartByCurrentCustomer
+
+* **Method:**
+    `POST`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    store_id=[integer]
+    store id<br/>
+    product_id=[integer]
+    product id<br/>
+    attributes_xml=[string]
+    attributes xml<br/>
+    customer_entered_price=[decimal]
+    customer entered price<br/>
+    quantity=[integer]
+    quantity<br/>
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+
+```
+
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad found, shopping cart item model should not be null",
+    "model": null
+  }
+  `
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+    * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Bad found, product is not found",
+    "model": null
+  }
+  `
+      ----
+  
+* **URL**
+/shoppingCart/addToCartByCurrentCustomer
+
+* **Method:**
+    `POST`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    id=[integer]
+    id<br/>
+    attributes_xml=[string]
+    attributes xml<br/>
+    customer_entered_price=[decimal]
+    customer entered price<br/>
+    quantity=[integer]
+    quantity<br/>
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+
+```
+
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad request, shopping cart item model should not be null",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  * **URL**
+/shoppingCart/addToCartByCurrentCustomer
+
+* **Method:**
+    `POST`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    id=[integer]
+    id<br/>
+    attributes_xml=[string]
+    attributes xml<br/>
+    customer_entered_price=[decimal]
+    customer entered price<br/>
+    quantity=[integer]
+    quantity<br/>
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+
+```
+
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Bad request, shopping cart item model should not be null",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
