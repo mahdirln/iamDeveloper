@@ -3908,7 +3908,7 @@ product response data
       ----
   
 * **URL**
-/shoppingCart/addToCartByCurrentCustomer
+/shoppingCart/updateShoppingCartByCurrentCustomer
 
 * **Method:**
     `POST`
@@ -3956,23 +3956,22 @@ product response data
   }
   `
   * **URL**
-/shoppingCart/addToCartByCurrentCustomer
+/shoppingCart/getWishlistByCurrentCustomer
 
 * **Method:**
     `POST`
 *  **URL Params**<br/>
-    `NONE`
+    workingCurrencyId=[decimal]
+    working currency id<br/>
+    workingLanguageId=[decimal]
+    working language id<br/>
 *   **Required:**<br/>
-    `NONE`
+    workingCurrencyId=[decimal]
+    working currency id<br/>
+    workingLanguageId=[decimal]
+    working language id<br/>
 * **Data Params**
-    id=[integer]
-    id<br/>
-    attributes_xml=[string]
-    attributes xml<br/>
-    customer_entered_price=[decimal]
-    customer entered price<br/>
-    quantity=[integer]
-    quantity<br/>
+    `NONE`
 
 * **Success Response:**
 
@@ -3984,11 +3983,11 @@ product response data
 
 * **Error Response:**
 
-  * **Code:** 400 BAD REQUEST <br />
+  * **Code:** 404 NOT FOUND <br />
   **Content:** `
   {
     "status": 400,
-    "message": "Bad request, shopping cart item model should not be null",
+    "message": "Not found, customer is not found",
     "model": null
   }
   `
@@ -3999,7 +3998,80 @@ product response data
   **Content:** `
   {
     "status": 404,
+    "message": "Not found, working language is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, current currency is not found",
+    "model": null
+  }
+  `
+    * **URL**
+/shoppingCart/getWishListByCurrentCustomerStoreId
+
+* **Method:**
+    `POST`
+*  **URL Params**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+*   **Required:**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+
+```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 400,
     "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, working language is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, current currency is not found",
     "model": null
   }
   `
