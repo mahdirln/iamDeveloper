@@ -3843,8 +3843,7 @@ product response data
     "model": null
   }
   `
-    ----
-  
+----
 * **URL**
 /shoppingCart/addToCartByCurrentCustomer
 
@@ -3871,7 +3870,7 @@ product response data
 * **Code:** 200 <br/>
   **Content:** 
 ```
-
+data
 ```
 
 * **Error Response:**
@@ -3905,13 +3904,12 @@ product response data
     "model": null
   }
   `
-      ----
-  
+----
 * **URL**
 /shoppingCart/updateShoppingCartByCurrentCustomer
 
 * **Method:**
-    `POST`
+    `PUT`
 *  **URL Params**<br/>
     `NONE`
 *   **Required:**<br/>
@@ -3931,7 +3929,7 @@ product response data
 * **Code:** 200 <br/>
   **Content:** 
 ```
-
+data
 ```
 
 * **Error Response:**
@@ -3955,11 +3953,12 @@ product response data
     "model": null
   }
   `
-  * **URL**
+----
+* **URL**
 /shoppingCart/getWishlistByCurrentCustomer
 
 * **Method:**
-    `POST`
+    `GET`
 *  **URL Params**<br/>
     workingCurrencyId=[decimal]
     working currency id<br/>
@@ -4013,25 +4012,84 @@ product response data
     "model": null
   }
   `
-    * **URL**
+----
+  
+* **URL**
 /shoppingCart/getWishListByCurrentCustomerStoreId
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+*   **Required:**<br/>
+    storeId=[integer]
+    store id<br/>
+    workingCurrencyId=[integer]
+    working currency id<br/>
+    workingLanguageId=[integer]
+    working language id<br/>
+* **Data Params**
+    `NONE`
+
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+data
+```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 400,
+    "message": "Not found, customer is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, working language is not found",
+    "model": null
+  }
+  `
+  
+  OR
+  
+  * **Code:** 404 NOT FOUND <br />
+  **Content:** `
+  {
+    "status": 404,
+    "message": "Not found, current currency is not found",
+    "model": null
+  }
+  `
+
+**CUSTOMER**
+----
+* **URL**
+/customer/createCustomerSession
 
 * **Method:**
     `POST`
 *  **URL Params**<br/>
-    storeId=[integer]
-    store id<br/>
-    workingCurrencyId=[integer]
-    working currency id<br/>
-    workingLanguageId=[integer]
-    working language id<br/>
+    phonenumber=[integer]
+    phonenumber<br/>
 *   **Required:**<br/>
-    storeId=[integer]
-    store id<br/>
-    workingCurrencyId=[integer]
-    working currency id<br/>
-    workingLanguageId=[integer]
-    working language id<br/>
+    phonenumber=[integer]
+    phonenumber<br/>
 * **Data Params**
     `NONE`
 
@@ -4040,39 +4098,82 @@ product response data
 * **Code:** 200 <br/>
   **Content:** 
 ```
-
+data
 ```
 
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 400 BAD REQUEST <br />
   **Content:** `
   {
     "status": 400,
-    "message": "Not found, customer is not found",
+    "message": "Bad request, phonenumber is empty or white space",
     "model": null
   }
   `
-  
-  OR
-  
-  * **Code:** 404 NOT FOUND <br />
-  **Content:** `
-  {
-    "status": 404,
-    "message": "Not found, working language is not found",
-    "model": null
-  }
-  `
-  
-  OR
-  
-  * **Code:** 404 NOT FOUND <br />
-  **Content:** `
-  {
-    "status": 404,
-    "message": "Not found, current currency is not found",
-    "model": null
-  }
-  `
-  
+----
+* **URL**
+/customer/verifyCustomerSession
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    phonenumber=[integer]
+    phonenumber<br/>
+    activation_code=[integer]
+    activation code<br/>
+    phonenumber=[integer]
+    phonenumber<br/>
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+data
+```
+
+* **Error Response:**
+
+* **Code:** 404 NOT FOUND <br />
+**Content:** `
+{
+  "status": 404,
+  "message": "Not found, customer session is not found",
+  "model": null
+}
+`
+
+OR
+
+* **Code:** 400 BAD REQUEST <br />
+**Content:** `
+{
+  "status": 400,
+  "message": "Bad request, customer session is expired",
+  "model": null
+}
+`
+  ----
+* **URL**
+/customer/createGuestCustomerSession
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+* **Code:** 200 <br/>
+  **Content:** 
+```
+data
+```
+
