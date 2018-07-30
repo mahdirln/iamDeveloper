@@ -4013,7 +4013,6 @@ data
   }
   `
 ----
-  
 * **URL**
 /shoppingCart/getWishListByCurrentCustomerStoreId
 
@@ -4157,7 +4156,7 @@ OR
   "model": null
 }
 `
-  ----
+----
 * **URL**
 /customer/createGuestCustomerSession
 
