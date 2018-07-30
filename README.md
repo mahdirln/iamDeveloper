@@ -1,3 +1,7 @@
+**NOTE**
+----
+`for authorize token, add Authorization header with "Bearer + token" value`
+
 **Address**
 ----
 * **URL**
