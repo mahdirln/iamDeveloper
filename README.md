@@ -5922,3 +5922,60 @@ data
   "model": null
 }
 `
+**Address**
+----
+* **URL**
+  /common/nivoSliders
+
+* **Method:**
+    `GET`
+*  **URL Params**<br/>
+    `NONE`
+*   **Required:**<br/>
+    `NONE`
+* **Data Params**
+    `NONE`
+* **Success Response:**
+
+  * **Code:** 200 <br/>
+    **Content:** 
+```
+{
+    "status": 200,
+    "message": "Ok, successfull",
+    "model": [
+        {
+            "link": "http://localhost:15536/",
+            "text": "",
+            "picture_id": 77,
+            "picture_model": {
+                "id": 77,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000077_banner_1.jpg",
+                "thumb_image_url": null,
+                "seo_filename": "banner_1",
+                "mime_type": "image/pjpeg",
+                "full_size_image_url": null,
+                "title": null,
+                "alternate_text": null
+            }
+        },
+        {
+            "link": "http://localhost:15536/",
+            "text": "",
+            "picture_id": 78,
+            "picture_model": {
+                "id": 78,
+                "image_base64": null,
+                "image_url": "http://localhost/content/images/thumbs/0000078_banner_2.jpg",
+                "thumb_image_url": null,
+                "seo_filename": "banner_2",
+                "mime_type": "image/pjpeg",
+                "full_size_image_url": null,
+                "title": null,
+                "alternate_text": null
+            }
+        }
+    ]
+}
+```
